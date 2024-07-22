@@ -3,6 +3,11 @@ name: caller workflow
 on: 
   push
 
+env: 
+  
+
+
+
 jobs:
   called_workflow:
     # uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
@@ -10,9 +15,17 @@ jobs:
     with:
       test: "hello patrick"
 
+
+  called_workflow_2:
+    uses: munnep-practice/workflows/.github/workflows/called.yaml@main
+    # uses: ./.github/workflows/called.yaml
+    with:
+      test: "hello patrick"      
+
    
   second_step:
     runs-on: ubuntu-latest
     steps:
     - run: echo second step
       name: just say something
+
