@@ -4,7 +4,7 @@ on:
   push
 
 env: 
-  
+  DAY_OF_WEEK: Monday
 
 
 
@@ -26,6 +26,6 @@ jobs:
   second_step:
     runs-on: ubuntu-latest
     steps:
-    - run: echo second step
+    - run: echo Today is ${{ env.DAY_OF_WEEK }} or $DAY_OF_WEEK
       name: just say something
 
