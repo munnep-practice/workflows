@@ -59,7 +59,7 @@ jobs:
       run: echo "$OUTPUT1 $OUTPUT2"      
 
     - id: output_directly
-      run: echo  ${{needs.job1.outputs.output2}} >> "$GITHUB_OUTPUT"
+      run: echo  "test3=WORKING WITH GITHUB_OUTPUT" >> "$GITHUB_OUTPUT"
 
     - name: context output1
       run: echo ${{ needs.job1.outputs }}  
