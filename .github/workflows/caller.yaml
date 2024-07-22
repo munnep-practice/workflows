@@ -60,5 +60,5 @@ jobs:
     - id: output_directly
       run: echo  ${{needs.job1.outputs.output2}}
 
-    - name: echo step details
-      run: echo steps.output_directly.outputs
+    - name: echo context output
+      run: echo ${{ steps.output_directly.outputs }}
