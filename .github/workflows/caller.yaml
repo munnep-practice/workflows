@@ -57,8 +57,8 @@ jobs:
   
       run: echo "$OUTPUT1 $OUTPUT2"      
 
-    - name: output directly
+    - id: output_directly
       run: echo  ${{needs.job1.outputs.output2}}
 
-    - name: output direct
-      run: echo  ${{job1.outputs.output2}}  
+    - name: echo step details
+      run: echo steps.output_directly.outputs
