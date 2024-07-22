@@ -4,14 +4,14 @@ on:
   push
 
 jobs:
-  called workflow:
+  called_workflow:
     # uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
     uses: ./.github/workflows/called.yaml
     with:
       test: "hello patrick"
 
    
-  second step:
+  second_step:
     runs-on: ubuntu-latest
     steps:
     - run: echo second step
