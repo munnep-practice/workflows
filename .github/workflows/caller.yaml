@@ -3,8 +3,7 @@ name: caller workflow
 on: 
   push
 
-env: 
-  DAY_OF_WEEK: Monday
+
 
 
 jobs:
@@ -32,6 +31,8 @@ jobs:
     steps:
     - run: echo Today is ${{ env.DAY_OF_WEEK }} or $DAY_OF_WEEK
       name: just say something
+      env: 
+        DAY_OF_WEEK: Monday
 
     
     - id: step1
@@ -58,7 +59,10 @@ jobs:
       run: echo "$OUTPUT1 $OUTPUT2"      
 
     - id: output_directly
-      run: echo  ${{needs.job1.outputs.output2}}
+      run: echo  ${{needs.job1.outputs.output2}} >> "$GITHUB_OUTPUT"
 
-    - name: echo context output
+    - name: context output1
+      run: echo ${{ needs.job1.outputs }}  
+
+    - name: context output2
       run: echo ${{ steps.output_directly.outputs }}
