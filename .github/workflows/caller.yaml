@@ -62,7 +62,7 @@ jobs:
       run: echo  "test3=WORKING WITH GITHUB_OUTPUT" >> "$GITHUB_OUTPUT"
 
     - name: context output1
-      run: echo ${{ needs.job1.outputs }}  
+      run: echo ${{ needs.job1.outputs }} | jq
 
     - name: context output2
-      run: echo ${{ steps.output_directly.outputs }}
+      run: echo ${{ steps.output_directly.outputs }} | jq
