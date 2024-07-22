@@ -1,0 +1,14 @@
+name: called workflow
+
+on:
+  workflow_call:
+    inputs:
+      test:
+        required: true
+        type: string
+
+  first step:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo ${{ inputs.test }}
+      name: just say something
