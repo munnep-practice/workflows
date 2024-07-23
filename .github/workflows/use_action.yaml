@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
     
       - id: test
-        uses: actions/./github/workflows/test
+        uses: ./.github/workflows/test
         with:
           who-to-greet: 'lotte'
       - run: echo random-number "$RANDOM_NUMBER"
