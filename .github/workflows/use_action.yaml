@@ -1,0 +1,24 @@
+name: use action
+
+on: 
+  workflow_dispatch
+
+
+
+
+jobs:
+  use_action:
+    runs-on: ubuntu-latest
+    name: use_action
+
+    steps:
+      - uses: actions/checkout@v4
+    
+      - id: test
+        uses: actions/./github/workflows/test
+        with:
+          who-to-greet: 'lotte'
+      - run: echo random-number "$RANDOM_NUMBER"
+        shell: bash
+        env:
+          RANDOM_NUMBER: ${{ steps.test.outputs.random-number }}
