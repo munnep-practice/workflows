@@ -1,0 +1,14 @@
+name: use action marketplace
+
+on: 
+  workflow_dispatch
+
+jobs:
+  use_action:
+    runs-on: ubuntu-latest
+    name: use_action
+
+    steps:
+      - name: Hello World Patrick
+        uses: munnep-practice/hello-patrick@v.0.0.1
+    
